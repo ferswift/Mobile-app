@@ -1,16 +1,18 @@
+import { Link } from "expo-router";
 import { Image, StyleSheet, Text, View } from "react-native";
-import Logo from "../src/assets/img/expo2.png";
 
 export default function index() {
   return (
     <View style={styles.container}>
-      <Image source={Logo} />
+      <Image source={require("../src/assets/img/expo2.png")} />
       <Text style={styles.title}>The number One</Text>
       <Text style={styles.p}>Reading List App</Text>
-
       <View>
         <Text style={styles.card}>Card Application</Text>
       </View>
+      <Link href="/about" style={styles.about}>
+        About Page
+      </Link>
     </View>
   );
 }
@@ -27,6 +29,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 20,
     marginTop: 50,
+    color: "#fff",
   },
   card: {
     backgroundColor: "#61DAFB",
@@ -38,6 +41,11 @@ const styles = StyleSheet.create({
   p: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#000",
+    color: "#fff",
+  },
+  about: {
+    color: "#fff",
+    fontWeight: "bold",
+    textDecorationLine: "underline",
   },
 });
