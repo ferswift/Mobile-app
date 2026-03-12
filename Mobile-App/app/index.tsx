@@ -1,19 +1,28 @@
 import { Link } from "expo-router";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, View } from "react-native";
+import ThemedView from "@/src/components/ThemedView";
+import ThemedText from "@/src/components/ThemedText";
 
-export default function index() {
+export default function Index() {
   return (
-    <View style={styles.container}>
+    <ThemedView style={styles.container}>
       <Image source={require("../src/assets/img/expo2.png")} />
-      <Text style={styles.title}>The number One</Text>
-      <Text style={styles.p}>Reading List App</Text>
+
+      <ThemedText style={styles.title}>The number One</ThemedText>
+
+      <ThemedText style={styles.p}>Expo App</ThemedText>
+
       <View>
-        <Text style={styles.card}>Card Application</Text>
+        <ThemedText style={styles.card}>Navigate, Become one of us.</ThemedText>
       </View>
+
       <Link href="/about" style={styles.about}>
-        About Page
+        <ThemedText>About Page</ThemedText>
       </Link>
-    </View>
+      <Link href="/contact" style={styles.about}>
+        <ThemedText>Contact Page</ThemedText>
+      </Link>
+    </ThemedView>
   );
 }
 
@@ -23,28 +32,36 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     gap: 20,
-    backgroundColor: "#21033F",
   },
+
   title: {
     fontWeight: "bold",
     fontSize: 20,
     marginTop: 50,
-    color: "#fff",
   },
+
   card: {
     backgroundColor: "#61DAFB",
+    color: "#000",
     padding: 20,
     borderRadius: 10,
     marginBottom: 10,
-    boxShadow: "0 4px 10px rgba(0,0,0,0.8)",
+    fontSize: 15,
+    fontFamily: "sans-serif",
+
+    elevation: 5,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.8,
+    shadowRadius: 10,
   },
+
   p: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#fff",
   },
+
   about: {
-    color: "#fff",
     fontWeight: "bold",
     textDecorationLine: "underline",
   },

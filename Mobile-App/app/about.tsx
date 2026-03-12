@@ -1,9 +1,11 @@
 import { Link } from "expo-router";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, View, Image } from "react-native";
+import ThemedView from "@/src/components/ThemedView";
+import ThemedText from "@/src/components/ThemedText";
 
 export default function About() {
   return (
-    <View style={styles.container}>
+    <ThemedView style={styles.container}>
       <Image
         style={styles.logo}
         source={{
@@ -12,22 +14,22 @@ export default function About() {
       />
 
       <View style={styles.containerText}>
-        <Text style={styles.title}>About React Native</Text>
+        <ThemedText style={styles.title}>About React Native</ThemedText>
 
-        <Text style={styles.description}>
+        <ThemedText style={styles.description}>
           React Native is a popular framework for building mobile applications
           using JavaScript and React. It allows developers to create
           cross-platform apps that run on both iOS and Android using a single
           codebase. React Native provides a rich set of components and APIs that
           enable developers to build high-quality mobile applications with a
           native look and feel.
-        </Text>
+        </ThemedText>
 
         <Link href="/" style={styles.about}>
-          Back to Home
+          <ThemedText>Back to Home</ThemedText>
         </Link>
       </View>
-    </View>
+    </ThemedView>
   );
 }
 
@@ -36,7 +38,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#21033F",
     padding: 20,
   },
 
@@ -54,7 +55,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: "bold",
     textAlign: "center",
-    color: "#fff",
     marginBottom: 15,
   },
 
@@ -62,10 +62,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: "center",
     lineHeight: 24,
-    color: "#ddd",
   },
+
   about: {
-    color: "#fff",
     fontWeight: "bold",
     textDecorationLine: "underline",
     textAlign: "center",
