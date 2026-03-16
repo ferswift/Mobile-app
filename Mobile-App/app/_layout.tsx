@@ -15,6 +15,7 @@ const RootLayout = () => {
         headerTitleStyle: { fontWeight: "bold", fontFamily: "sans-serif" },
       }}
     >
+      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
       <Stack.Screen name="index" options={{ title: "Home" }} />
       <Stack.Screen name="about" options={{ title: "About Us" }} />
       <Stack.Screen name="contact" options={{ title: "Contact us" }} />

@@ -16,11 +16,11 @@ export default function Index() {
         <ThemedText style={styles.card}>Navigate, Become one of us.</ThemedText>
       </View>
 
-      <Link href="/about" style={styles.about}>
-        <ThemedText>About Page</ThemedText>
+      <Link href="/login" style={styles.about}>
+        <ThemedText>Login</ThemedText>
       </Link>
-      <Link href="/contact" style={styles.about}>
-        <ThemedText>Contact Page</ThemedText>
+      <Link href="/register" style={styles.about}>
+        <ThemedText>Register</ThemedText>
       </Link>
     </ThemedView>
   );
