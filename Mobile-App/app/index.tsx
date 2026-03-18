@@ -22,6 +22,9 @@ export default function Index() {
       <Link href="/register" style={styles.about}>
         <ThemedText>Register</ThemedText>
       </Link>
+      <Link href="/profile" style={styles.about}>
+        <ThemedText>Profile</ThemedText>
+      </Link>
     </ThemedView>
   );
 }
