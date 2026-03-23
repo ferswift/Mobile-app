@@ -5,7 +5,7 @@ import ThemedText from "@/src/components/ThemedText";
 const Books = () => {
   return (
     <ThemedView style={styles.container}>
-      <ThemedText style={styles.heading}>Add a new book</ThemedText>
+      <ThemedText style={styles.heading}>List of Books</ThemedText>
     </ThemedView>
   );
 };
