@@ -1,15 +1,34 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, TextInput, View } from "react-native";
 
 // Themed Components
 import ThemedView from "@/src/components/ThemedView";
 import ThemedText from "@/src/components/ThemedText";
 import { Link } from "expo-router";
 import ThemedButton from "@/src/components/ThemedButton";
+import { useState } from "react";
 
-const login = () => {
+const Login = () => {
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
   return (
     <ThemedView style={styles.container}>
       <ThemedText style={styles.title}>Login to your account</ThemedText>
+
+      <TextInput
+        placeholder="Email"
+        value={email}
+        onChangeText={setEmail}
+        style={{ margin: 10, borderWidth: 1, padding: 10 }}
+      />
+
+      <TextInput
+        placeholder="Password"
+        value={password}
+        onChangeText={setPassword}
+        secureTextEntry
+        style={{ margin: 10, borderWidth: 1, padding: 10 }}
+      />
 
       <ThemedButton
         title="Login"
@@ -27,7 +46,7 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;
 
 const styles = StyleSheet.create({
   container: {
