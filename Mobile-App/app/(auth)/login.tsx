@@ -7,9 +7,20 @@ import { Link } from "expo-router";
 import ThemedButton from "@/src/components/ThemedButton";
 import { useState } from "react";
 
+import { login } from "@/src/services/authService";
+
 const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+
+  const handleLogin = async () => {
+    try {
+      const user = await login(email, password);
+      console.log("Logged in user:", user);
+    } catch (error) {
+      console.log("Login error:", error);
+    }
+  };
 
   return (
     <ThemedView style={styles.container}>
@@ -19,7 +30,14 @@ const Login = () => {
         placeholder="Email"
         value={email}
         onChangeText={setEmail}
-        style={{ margin: 10, borderWidth: 1, padding: 10 }}
+        style={{
+          margin: 10,
+          borderWidth: 1,
+          padding: 10,
+          color: "#fff",
+          width: "50%",
+          textAlign: "center",
+        }}
       />
 
       <TextInput
@@ -27,13 +45,20 @@ const Login = () => {
         value={password}
         onChangeText={setPassword}
         secureTextEntry
-        style={{ margin: 10, borderWidth: 1, padding: 10 }}
+        style={{
+          margin: 10,
+          borderWidth: 1,
+          padding: 10,
+          color: "#fff",
+          width: "50%",
+          textAlign: "center",
+        }}
       />
 
       <ThemedButton
         title="Login"
         style={{ margin: 20, alignItems: "center" }}
-        onPress={() => console.log("Login pressed")}
+        onPress={handleLogin}
       />
       <View style={{ marginTop: 70 }}>
         <Link href="/register" asChild>
@@ -52,6 +77,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
+    alignItems: "center",
   },
   title: {
     textAlign: "center",

@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 import ThemedView from "@/src/components/ThemedView";
 import ThemedText from "@/src/components/ThemedText";
 
-const create = () => {
+const Create = () => {
   return (
     <ThemedView style={styles.container}>
       <ThemedText style={styles.heading}>Add a new book</ThemedText>
@@ -10,7 +10,7 @@ const create = () => {
   );
 };
 
-export default create;
+export default Create;
 
 const styles = StyleSheet.create({
   container: {
